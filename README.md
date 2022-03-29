@@ -20,10 +20,10 @@ Other teams would like to consume your service in a few ways:
   - The application to make sure the data is up-to-date.
   - Requests coming in so that you are confident the service is healthy.
 - You are only serving a couple of teams with a few requests per second, but the number of requests are expected to increase dramatically if your service is proven to be reliable and performant.
-- (Optional) You and your team also would like to run some reports to better understand how people are using the service, but they are not sure what they are looking for at this moment so they are open to suggestions.
+- You and your team also would like to run some reports to better understand how people are using the service, but they are not sure what they are looking for at this moment so they are open to suggestions.
 
 ## Other notes
 
 - There's no limit on your technology stack or hosting infrastructure.
+- Expected time to complete this challenge is around 6-8 hours. It's fine if you don't have time to implement everything, but please document your thought process and plans.
 - It is highly encouraged if you could document your assumptions during the implementation.
-- It is encouraged if you could also document the future improvements or anything you haven't got time to implement or think about.
