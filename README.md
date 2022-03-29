@@ -25,5 +25,5 @@ Other teams would like to consume your service in a few ways:
 ## Other notes
 
 - There's no limit on your technology stack or hosting infrastructure.
-- Expected time to complete this challenge is around 6-8 hours. It's fine if you don't have time to implement everything, but please document your thought process and plans.
 - It is highly encouraged if you could document your assumptions during the implementation.
+- Expected time to complete this challenge is around 6-8 hours. It's fine if you don't have time to implement everything, but please document your thought process and plans.
