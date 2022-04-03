@@ -9,3 +9,4 @@ The reason to store data is to provide query service because query service is sn
 ```
 chmod +x ./porting.sh
 ./porting.sh
+```

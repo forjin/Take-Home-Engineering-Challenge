@@ -22,4 +22,4 @@ Here is the command how to create infra structure for this project
 
 ```
 docker compose up -d
-
+```
