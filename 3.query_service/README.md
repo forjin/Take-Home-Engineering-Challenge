@@ -1,24 +1,29 @@
-# Take Home Engineering Challenge
+# BSB Query Service
 
-Query service is snapshot service to show the customer request 
+Query service is snapshot service to show the customer request, so decieded to use restful api implementation.
 
-## Functional Requirements
+## Architecture
 
-- Be able to get the full list BSB records
-- Be able to query a BSB record using the 6-digit BSB number
+- Spring web java application
+- Actuator end point to check healthy of the service
+- postgres database will be used in this service
 
+## End point description
 
-## Non-functional Requirements
+- /bsb : return full list of bsb object in one page
+- /bsb/{query-bsb-string} : return specific bsb or if there is no matching result the return will be empty
 
-- Your system should be able to authenticate requests so that only authorised callers can query your system.
-- You need some means to monitor:
-  - The application to make sure the data is up-to-date.
-  - Requests coming in so that you are confident the service is healthy.
-- You are only serving a couple of teams with a few requests per second, but the number of requests are expected to increase dramatically if your service is proven to be reliable and performant.
-- You and your team also would like to run some reports to better understand how people are using the service, but they are not sure what they are looking for at this moment so they are open to suggestions.
+To be improved
+ - Able to use swagger to publish interface description and versioning
+ - Pagenation can be implemented on full list query
+## Application execution
 
-## Other notes
+To do application run on your local
+```
+./gradlew bootRun
+```
 
-- There's no limit on your technology stack or hosting infrastructure.
-- It is highly encouraged if you could document your assumptions during the implementation.
-- Expected time to complete this challenge is around 6-8 hours. It's fine if you don't have time to implement everything, but please document your thought process and plans.
+To do test your application
+```
+./gradlew test
+```
