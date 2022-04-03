@@ -2,6 +2,7 @@ package com.microsoft.bsb.controller;
 
 
 import com.microsoft.bsb.model.BSB;
+import com.microsoft.bsb.model.EmptyJsonResponse;
 import com.microsoft.bsb.service.BSBService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.LogManager;
@@ -35,9 +36,9 @@ public class BSBController {
 
     @GetMapping(value = "/bsb/{bsb}")
     public @ResponseBody
-    BSB getById(@PathVariable String bsb) {
+    Object getById(@PathVariable String bsb) {
         logger.info("getById called:" + bsb);
         Optional<BSB> result = bsbService.getBSBById(bsb);
-        return result.isPresent() ? result.get() : null;
+        return result.isPresent() ? result.get() : new EmptyJsonResponse();
     }
 }

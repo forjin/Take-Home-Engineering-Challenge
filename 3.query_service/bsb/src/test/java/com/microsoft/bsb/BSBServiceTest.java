@@ -9,6 +9,7 @@ import static org.hamcrest.Matchers.is;
 
 import com.microsoft.bsb.controller.BSBController;
 import com.microsoft.bsb.model.BSB;
+import com.microsoft.bsb.model.EmptyJsonResponse;
 import com.microsoft.bsb.service.BSBService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -23,8 +24,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 
 @RunWith(SpringRunner.class)
@@ -78,4 +78,22 @@ public class BSBServiceTest {
                 .andExpect(jsonPath("$.bsb_address", is(nab.getBsb_address())));
 
     }
+
+    @Test
+    public void give_nonQuery()
+            throws Exception {
+
+        BSB nab = new BSB();
+        nab.setBsb("002-002");
+        nab.setBsb_address("700 Burke st Docklands");
+
+        when(bsbService.getBSBById(nab.getBsb())).thenReturn(Optional.of(nab));
+
+        mvc.perform(get("/service/bsb/111-111")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andDo(print())
+                .andExpect(content().string("{}"));
+    }
+
 }
