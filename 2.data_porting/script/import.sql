@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS BSB (
   Payment_Systems varchar(200)
 );
 
-\COPY BSB  FROM '/tmp/BSBDirectoryMar22-312.csv' DELIMITER ',' NULL '' CSV;
+\COPY BSB(BSB, FI_Code, Financial_Institution, BSB_Address, Suburb, Address_State, Post_Code, Payment_Systems)  FROM '/tmp/BSBDirectoryMar22-312.csv' DELIMITER ',' NULL '' CSV;
 
 
 -- CREATE TABLE bsb ( 
